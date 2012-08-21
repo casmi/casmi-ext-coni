@@ -1,7 +1,7 @@
 /*
- *   casmi
- *   http://casmi.github.com/
- *   Copyright (C) 2011, Xcoo, Inc.
+ *   casmi-ext-coni
+ *   https://github.com/casmi/casmi-ext-coni
+ *   Copyright (C) 2012, Xcoo, Inc.
  *
  *  casmi is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
@@ -16,6 +16,7 @@
  *  You should have received a copy of the GNU Lesser General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 package casmi.extension.coni;
 
 import java.nio.ShortBuffer;

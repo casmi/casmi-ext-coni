@@ -1,7 +1,7 @@
 /*
- *   casmi
- *   http://casmi.github.com/
- *   Copyright (C) 2011, Xcoo, Inc.
+ *   casmi-ext-coni
+ *   https://github.com/casmi/casmi-ext-coni
+ *   Copyright (C) 2012, Xcoo, Inc.
  *
  *  casmi is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
@@ -21,6 +21,9 @@ package casmi.extension.coni.exception;
 
 import casmi.exception.CasmiException;
 
+/**
+ * @author T. Takeuchi
+ */
 public class CONIException extends CasmiException {
 
     public CONIException() {

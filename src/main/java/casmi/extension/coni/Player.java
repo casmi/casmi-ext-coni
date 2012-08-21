@@ -1,7 +1,7 @@
 /*
- *   casmi
- *   http://casmi.github.com/
- *   Copyright (C) 2011, Xcoo, Inc.
+ *   casmi-ext-coni
+ *   https://github.com/casmi/casmi-ext-coni
+ *   Copyright (C) 2012, Xcoo, Inc.
  *
  *  casmi is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Lesser General Public License as published by
@@ -31,6 +31,9 @@ import org.OpenNI.StatusException;
 import casmi.extension.coni.exception.CONIException;
 import casmi.extension.coni.exception.CONIRuntimeException;
 
+/**
+ * @author T. Takeuchi
+ */
 public class Player extends CONI {
 
     private final org.OpenNI.Player player;

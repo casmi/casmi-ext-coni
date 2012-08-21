@@ -54,7 +54,7 @@
 	  </plugin>
 	</plugins>
   </build>
-  <url>http://casmi.github.com</url>
+  <url>https://github.com/casmi/casmi-ext-coni</url>
   <name>casmi-ext-coni</name>
   <description>casmi extension for accessing OpenNI</description>
 </project>
