@@ -23,7 +23,6 @@ import casmi.AppletRunner;
 import casmi.KeyEvent;
 import casmi.MouseButton;
 import casmi.MouseEvent;
-import casmi.extension.coni.exception.CONIException;
 import casmi.graphics.color.ColorSet;
 import casmi.graphics.element.Text;
 import casmi.graphics.element.TextAlign;
@@ -44,9 +43,9 @@ public class SimpleViewerExample extends Applet {
         DEPTH
     }
     
-    private CONI coni;
-    private Text text;
-    private ScreenMode screenMode = ScreenMode.IMAGE;
+    CONI coni;
+    Text text;
+    ScreenMode screenMode = ScreenMode.IMAGE;
     
     @Override
     public void setup() {
@@ -55,6 +54,7 @@ public class SimpleViewerExample extends Applet {
         coni = new CONI();
         coni.enableImage(640, 480, 30);
         coni.enableDepth(640, 480, 30);
+        addUpdateObject(coni);
         
         Texture tex = coni.getImageMap().getTexture();
         tex.setPosition(getWidth() / 2, getHeight() / 2);
@@ -68,15 +68,7 @@ public class SimpleViewerExample extends Applet {
     }
 
     @Override
-    public void update() {
-        // update sensor data
-        try {
-            coni.update();
-        } catch (CONIException e) {
-            e.printStackTrace();
-            return;
-        }
-    }
+    public void update() {}
 
     @Override
     public void mouseEvent(MouseEvent e, MouseButton b) {

@@ -53,6 +53,7 @@ import org.OpenNI.StatusException;
 import org.OpenNI.UserEventArgs;
 import org.OpenNI.UserGenerator;
 
+import casmi.Updatable;
 import casmi.extension.coni.exception.CONIException;
 import casmi.extension.coni.exception.CONIRuntimeException;
 import casmi.extension.coni.listener.GestureListener;
@@ -67,7 +68,7 @@ import casmi.matrix.Vertex;
  * 
  * @author T. Takeuchi
  */
-public class CONI {
+public class CONI implements Updatable {
 
     private final CONI instance;
     
@@ -479,7 +480,8 @@ public class CONI {
         return handEnabled;
     }
     
-    public void update() throws CONIException {
+    @Override
+    public void update() {
         if (lock) return;
         
         try {
@@ -490,7 +492,7 @@ public class CONI {
             if (irMap    != null) irMap.update();
             if (userMap  != null) userMap.update();
         } catch (StatusException e) {
-            throw new CONIException(e);
+            throw new CONIRuntimeException(e);
         }
     }
     

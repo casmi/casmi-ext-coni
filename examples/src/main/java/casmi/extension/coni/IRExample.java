@@ -23,8 +23,6 @@ import casmi.AppletRunner;
 import casmi.KeyEvent;
 import casmi.MouseButton;
 import casmi.MouseEvent;
-import casmi.extension.coni.CONI;
-import casmi.extension.coni.exception.CONIException;
 import casmi.graphics.element.Texture;
 
 /**
@@ -44,6 +42,7 @@ public class IRExample extends Applet {
         
         coni = new CONI();
         coni.enableIR(640, 480, 30);
+        addUpdateObject(coni);
         
         Texture tex = coni.getIRMap().getTexture();
         tex.setPosition(getWidth() / 2, getHeight() / 2);
@@ -51,13 +50,7 @@ public class IRExample extends Applet {
     }
 
     @Override
-    public void update() {
-        try {
-            coni.update();
-        } catch (CONIException e) {
-            e.printStackTrace();
-        }
-    }
+    public void update() {}
     
     @Override
     public void mouseEvent(MouseEvent e, MouseButton b) {}

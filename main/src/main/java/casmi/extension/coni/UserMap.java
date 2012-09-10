@@ -77,7 +77,7 @@ public class UserMap {
             }
         }
         
-        tex.getImage().reloadTexture();
+        tex.getImage().loadTexture();
     }
     
     public final int getUser(int x, int y) {

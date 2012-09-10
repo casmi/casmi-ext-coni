@@ -25,9 +25,6 @@ import casmi.AppletRunner;
 import casmi.KeyEvent;
 import casmi.MouseButton;
 import casmi.MouseEvent;
-import casmi.extension.coni.CONI;
-import casmi.extension.coni.Player;
-import casmi.extension.coni.Recorder;
 import casmi.extension.coni.exception.CONIException;
 import casmi.graphics.element.Texture;
 import casmi.util.SystemUtil;
@@ -58,6 +55,7 @@ public class RecorderExample extends Applet {
         coni.enableImage(640, 480, 30);
         coni.enableDepth(640, 480, 30);
         coni.setDepthViewpointToImage();
+        addUpdateObject(coni);
         
         Texture imageTex = coni.getImageMap().getTexture();
         imageTex.setPosition(getWidth() / 2, getHeight() / 2);
@@ -69,16 +67,7 @@ public class RecorderExample extends Applet {
     }
 
     @Override
-    public void update() {
-        try {
-            if (!playing)
-                coni.update();
-            else
-                player.update();
-        } catch (CONIException e) {
-            e.printStackTrace();
-        }
-    }
+    public void update() {}
 
     @Override
     public void mouseEvent(MouseEvent e, MouseButton b) {}
@@ -107,15 +96,20 @@ public class RecorderExample extends Applet {
                 if (!playing) {
                     try {
                         player = new Player(new File(FILE_PATH));
+                        
                         player.enableImage();
                         player.enableDepth();
                         player.setDepthViewpointToImage();
+                        
+                        addUpdateObject(player);
+                        
                         playing = true;
                     } catch (CONIException ex) {
                         ex.printStackTrace();
                     }
                 } else {
                     player = null;
+                    removeUpdateObject(player);
                     playing = false;
                 }
                 break;

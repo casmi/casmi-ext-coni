@@ -61,6 +61,8 @@ public class HandControlExample extends Applet implements GestureListener, HandL
         coni.addHandListener(this);
         coni.setMirror(true);
         
+        addUpdateObject(coni);
+        
         line.setStrokeWidth(2);
         line.setStrokeColor(ColorSet.ALICE_BLUE);
         line.hidden();
@@ -80,13 +82,7 @@ public class HandControlExample extends Applet implements GestureListener, HandL
     }
 
     @Override
-    public void update() {
-        try {
-            coni.update();
-        } catch (CONIException e) {
-            e.printStackTrace();
-        }
-    }
+    public void update() {}
 
     @Override
     public void mouseEvent(MouseEvent e, MouseButton b) {}

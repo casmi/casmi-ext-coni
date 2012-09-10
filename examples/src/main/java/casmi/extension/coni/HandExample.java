@@ -59,6 +59,8 @@ public class HandExample extends Applet implements GestureListener, HandListener
         coni.addGestureListener(this);
         coni.addHandListener(this);
         
+        addUpdateObject(coni);
+        
         Texture tex = coni.getDepthMap().getTexture();
         tex.setPosition(getWidth() / 2, getHeight() / 2);
         addObject(tex);
@@ -68,13 +70,7 @@ public class HandExample extends Applet implements GestureListener, HandListener
     }
     
     @Override
-    public void update() {
-        try {
-            coni.update();
-        } catch (CONIException e) {
-            e.printStackTrace();
-        }
-    }
+    public void update() {}
 
     @Override
     public void mouseEvent(MouseEvent e, MouseButton b) {}

@@ -26,7 +26,6 @@ import casmi.AppletRunner;
 import casmi.KeyEvent;
 import casmi.MouseButton;
 import casmi.MouseEvent;
-import casmi.extension.coni.exception.CONIException;
 import casmi.extension.coni.listener.PoseDetectionListener;
 import casmi.extension.coni.listener.SkeletonListener;
 import casmi.extension.coni.listener.UserListener;
@@ -79,6 +78,8 @@ implements UserListener, SkeletonListener, PoseDetectionListener {
         coni.addPoseDetectionListener(this);
         coni.setMirror(true);
         
+        addUpdateObject(coni);
+        
         Texture depthTex = coni.getDepthMap().getTexture();
         depthTex.setPosition(getWidth() / 2, getHeight() / 2);
         addObject(depthTex);
@@ -98,18 +99,11 @@ implements UserListener, SkeletonListener, PoseDetectionListener {
     public void update() {
         group.clear();
         
-        try {
-            // update sensor data
-            coni.update();
-            
-            // rendering skeletons and labels
-            int[] users = coni.getUsers();
-            for (int i = 0; i < users.length; i++) {
-                drawSkeleton(users[i]);
-                drawLabel(users[i]);
-            }
-        } catch (CONIException e) {
-            e.printStackTrace();
+        // rendering skeletons and labels
+        int[] users = coni.getUsers();
+        for (int i = 0; i < users.length; ++i) {
+            drawSkeleton(users[i]);
+            drawLabel(users[i]);
         }
     }
     
