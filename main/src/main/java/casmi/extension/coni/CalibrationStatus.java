@@ -43,7 +43,7 @@ public enum CalibrationStatus {
     
     MANUAL_RESET,
     
-    CALIBRATION_STATUS_TIMEOUT_FAIL;
+    TIMEOUT_FAIL;
     
     static final CalibrationStatus valueOf(org.OpenNI.CalibrationProgressStatus status) {
         switch (status) {
@@ -65,12 +65,12 @@ public enum CalibrationStatus {
             return SIDE_FOV;
         case POSE:
             return POSE;
-//        case MANUAL_ABORT:
-//            return MANUAL_ABORT;
-//        case MANUAL_RESET:
-//            return MANUAL_RESET;
-//        case CALIBRATION_STATUS_TIMEOUT_FAIL:
-//            return CALIBRATION_STATUS_TIMEOUT_FAIL;
+        case MANUAL_ABORT:
+            return MANUAL_ABORT;
+        case MANUAL_RESET:
+            return MANUAL_RESET;
+        case TIMEOUT_FAIL:
+            return TIMEOUT_FAIL;
         }
         
         return null; // dummy
