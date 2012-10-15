@@ -71,7 +71,7 @@ public class DepthMap {
             }
         }
         
-        tex.getImage().loadTexture();
+        tex.reload();
     }
     
     public int getDepth(int x, int y) {

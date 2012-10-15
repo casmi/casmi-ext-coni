@@ -61,7 +61,7 @@ public class IRMap {
             }
         }
         
-        tex.getImage().loadTexture();
+        tex.reload();
     }
     
     public int getUser(int x, int y) {

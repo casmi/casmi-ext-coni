@@ -54,7 +54,7 @@ public class ImageMap {
     private final void updateTexture() {
         Color[] colors = getColorArray();
         tex.getImage().setColors(colors);
-        tex.getImage().loadTexture();
+        tex.reload();
     }
     
     public Color getColor(int x, int y) {
