@@ -2,8 +2,8 @@
 
 # Dependency
 
-* OpenNI ver. 1.5.2.23-stable
-* NITE ver. 1.5.2.21-stable
+* OpenNI v1.5.2.23-stable
+* NITE v1.5.2.21-stable
 * Sensor/SensorKinect
 
 # Usage
@@ -12,18 +12,64 @@
 
 Install OpenNI, NITE, and Sensor/SensorKinect on your PC.
 
+You can download OpenNI, NITE, and Sensor from [OpenNI official page](http://www.openni.org/Downloads/OpenNIModules.aspx).
+
+SensorKinect from [Github page](https://github.com/avin2/SensorKinect).
+
 ## Install native libraries
 
-Copy native libraries that is installed along with OpenNI and NITE to directory under java.library.path.
+Copy native libraries that is installed along with OpenNI and NITE to 
+directory under `java.library.path`.
 
+* Linux
+    * libOpenNI.jni.so
+    * libXnVNITE.jni.so
 * Mac OS X
     * libOpenNI.jni.dylib
     * libXnVNITE.jni.dylib
 * Windows
-    * TODO
-* Linux
-    * TODO
+    * OpenNI.jni.dll
+    * XnVNITE.jni.dll
     
+Typical directories under `java.library.path` are followings.
+
+* Linux
+    * /usr/local/lib
+    * /usr/lib
+    * /lib
+* Mac OS X
+    * /Library/Java/Extensions
+    * /System/Library/Java/Extensions
+    * /usr/lib/java
+* Windows
+    * C:\Windows\system32
+    * C:\Windows
+    
+## Using maven    
+
+Add dependencies to pom.xml.
+
+    <repositories>
+        <repository>
+            <id>casmi</id>
+            <name>casmi</name>
+            <url>http://casmi.github.com/maven-repo/</url>
+        </repository>
+    </repositories>
+  
+    <dependencies>
+        <dependency>
+            <groupId>casmi</groupId>
+            <artifactId>casmi</artifactId>
+            <version>0.3.0</version>
+        </dependency>
+        <dependency>
+    	     <groupId>casmi</groupId>
+    	     <artifactId>casmi-ext-video</artifactId>
+    	     <version>0.3.0</version>
+        </dependency>
+    </dependencies>
+  
 # License
 
 ## casmi-ext-coni
