@@ -4,7 +4,7 @@
     
     <groupId>casmi</groupId>
     <artifactId>casmi-ext-coni</artifactId>
-    <version>0.2.1-SNAPSHOT</version>
+    <version>0.3.0</version>
     <packaging>jar</packaging>
 
     <url>https://github.com/casmi/casmi-ext-coni</url>
@@ -27,12 +27,12 @@
         <dependency>
             <groupId>casmi</groupId>
             <artifactId>casmi</artifactId>
-            <version>0.2.1-SNAPSHOT</version>
+            <version>0.3.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>4.10</version>
         </dependency>
         <dependency>
             <groupId>org.OpenNI</groupId>
